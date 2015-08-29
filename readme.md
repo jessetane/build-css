@@ -5,7 +5,7 @@ Personal flavor of css build script
 Not crazy about the build frameworks
 
 ## How
-glob + multistream + postcss + autoprefixer
+[glob](https://github.com/isaacs/node-glob) + [multistream](https://github.com/feross/multistream) + [postcss](https://github.com/postcss/postcss) + [autoprefixer](https://github.com/postcss/autoprefixer-core)
 
 ## Example
 As a standalone executable:
