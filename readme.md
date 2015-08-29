@@ -20,7 +20,7 @@ $ build-css --watch
 
 Use env vars to change the source pattern / destination / ignore pattern:
 ```bash
-$ CSS_SRC='**/*.css' CSS_DEST=share/build.css CSS_IGNORE=share build-css
+$ CSS_SRC='**/*.css' CSS_DEST=share/build.css CSS_IGNORE='share/**,node_modules/**' build-css
 ```
 
 As a JavaScript library:
@@ -31,7 +31,7 @@ var Builder = require('build-css')
 var b = new Builder({
   src: '**/*.css',
   dest: 'share/build.css',
-  ignore: 'share'
+  ignore: [ 'share/**', 'node_modules/**' ]
 })
 
 b['build' || 'watch'](function (err) {
@@ -42,7 +42,7 @@ b['build' || 'watch'](function (err) {
 
 ## Install
 ```bash
-$ npm install jessetane/build-css#1.0.3
+$ npm install jessetane/build-css#1.0.4
 ```
 
 ## Test
