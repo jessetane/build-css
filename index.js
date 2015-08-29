@@ -62,6 +62,8 @@ Builder.prototype._onfiles = function (cb, err, files) {
         cb(err)
       }
     }
+    // multistream stops listening for errors after the first one
+    tr.on('error', function (err) {})
     return rs.pipe(tr)
   }))
 
