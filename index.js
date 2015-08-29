@@ -41,7 +41,7 @@ Builder.prototype.unwatch = function () {
 }
 
 Builder.prototype._onfiles = function (cb, err, files) {
-  if (err) return done.call(cb, err)
+  if (err) return this._done(cb, err)
 
   files.sort(function (a, b) {
     a = a.split('/').slice(-1)[0]
@@ -67,21 +67,18 @@ Builder.prototype._onfiles = function (cb, err, files) {
 
   var dest = fs.createWriteStream(this.dest)
 
-  src.on('error', done.bind(cb))
-  dest.on('finish', done.bind(cb))
+  src.on('error', this._done.bind(this, cb))
+  dest.on('finish', this._done.bind(this, cb))
 
-  cb.hadError = false
   src.pipe(dest)
 }
 
-function done (err) {
+Builder.prototype._done = function (cb, err) {
   if (err) {
     err.message = 'error building css: ' + err.message
-    this.hadError = true
-    this(err)
-  } else if (!this.hadError) {
-    this(err)
   }
+  !cb._called && cb(err)
+  cb._called = true
 }
 
 if (!module.parent) {
