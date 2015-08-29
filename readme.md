@@ -7,6 +7,8 @@ Not crazy about the build frameworks
 ## How
 [glob](https://github.com/isaacs/node-glob) + [multistream](https://github.com/feross/multistream) + [postcss](https://github.com/postcss/postcss) + [autoprefixer](https://github.com/postcss/autoprefixer-core)
 
+Note: `build-css` sorts all your stylesheets by name before concatenating - this is important (lol) since css cares about the ordering of things. For example you could prefix a reset with "-" to make sure gets written first, and a media query with "~" to make sure it gets written last.
+
 ## Example
 As a standalone executable:
 ```bash
@@ -42,7 +44,7 @@ b['build' || 'watch'](function (err) {
 
 ## Install
 ```bash
-$ npm install jessetane/build-css#1.0.4
+$ npm install jessetane/build-css#1.0.5
 ```
 
 ## Test
