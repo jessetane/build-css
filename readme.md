@@ -42,7 +42,7 @@ b['build' || 'watch'](function (err) {
 
 ## Install
 ```bash
-$ npm install jessetane/build-css#1.0.0
+$ npm install jessetane/build-css#1.0.3
 ```
 
 ## Test
