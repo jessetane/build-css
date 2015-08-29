@@ -12,7 +12,7 @@ var fs = require('fs')
 
 var SRC = process.env.CSS_SRC || '**/*.css'
 var DEST = process.env.CSS_DEST || 'share/build.css'
-var IGNORE = process.env.CSS_IGNORE || 'share'
+var IGNORE = (process.env.CSS_IGNORE || 'share/**,node_modules/**').split(',')
 
 function Builder (opts) {
   opts = opts || {}
