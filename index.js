@@ -69,9 +69,9 @@ Builder.prototype._onfiles = function (cb, err, files) {
 
   var dest = fs.createWriteStream(this.dest)
 
-  src.on('error', this._done.bind(this, cb))
-  dest.on('finish', this._done.bind(this, cb))
-
+  var ctx = {}
+  src.on('error', this._done.bind(ctx, cb))
+  dest.on('finish', this._done.bind(ctx, cb))
   src.pipe(dest)
 }
 
@@ -79,8 +79,8 @@ Builder.prototype._done = function (cb, err) {
   if (err) {
     err.message = 'error building css: ' + err.message
   }
-  !cb._called && cb(err)
-  cb._called = true
+  !this._called && cb(err)
+  this._called = true
 }
 
 if (!module.parent) {
