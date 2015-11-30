@@ -22,7 +22,7 @@ $ build-css --watch
 
 Use env vars to change the source pattern / destination / ignore pattern:
 ```bash
-$ CSS_SRC='**/*.css' CSS_DEST=share/build.css CSS_IGNORE='share/**,node_modules/**' build-css
+$ CSS_SRC='**/*.css' CSS_DEST=public/build.css CSS_IGNORE='public/**,node_modules/**' build-css
 ```
 
 As a JavaScript library:
@@ -32,8 +32,8 @@ var Builder = require('build-css')
 // env vars are respected, but you can override them:
 var b = new Builder({
   src: '**/*.css',
-  dest: 'share/build.css',
-  ignore: [ 'share/**', 'node_modules/**' ]
+  dest: 'public/build.css',
+  ignore: [ 'public/**', 'node_modules/**' ]
 })
 
 b['build' || 'watch'](function (err) {

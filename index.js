@@ -11,8 +11,8 @@ var autoprefixer = require('autoprefixer-core')
 var fs = require('fs')
 
 var SRC = process.env.CSS_SRC || '**/*.css'
-var DEST = process.env.CSS_DEST || 'share/build.css'
-var IGNORE = (process.env.CSS_IGNORE || 'share/**,node_modules/**').split(',')
+var DEST = process.env.CSS_DEST || 'public/build.css'
+var IGNORE = (process.env.CSS_IGNORE || 'public/**,node_modules/**').split(',')
 
 function Builder (opts) {
   opts = opts || {}
