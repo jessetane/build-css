@@ -14,7 +14,7 @@
     "concat-transform": "^0.0.3",
     "glob": "^5.0.14",
     "multistream": "^2.0.2",
-    "postcss": "^4.1.16"
+    "postcss": "^5.0.19"
   },
   "devDependencies": {
     "standard": "^5.1.1"
