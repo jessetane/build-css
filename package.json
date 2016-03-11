@@ -1,6 +1,6 @@
 {
   "name": "build-css",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Personal flavor of css build script",
   "bin": {
     "build-css": "index.js"
