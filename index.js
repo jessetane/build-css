@@ -7,7 +7,7 @@ var glob = require('glob')
 var multistream = require('multistream')
 var concat = require('concat-transform')
 var postcss = require('postcss')
-var autoprefixer = require('autoprefixer-core')
+var autoprefixer = require('autoprefixer')
 var fs = require('fs')
 
 var SRC = process.env.CSS_SRC || '**/*.css'

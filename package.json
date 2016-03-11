@@ -9,7 +9,7 @@
     "test": "standard && CSS_SRC='test/fixture/**/*.css' CSS_DEST='test/build.css' node index.js && node test"
   },
   "dependencies": {
-    "autoprefixer-core": "^5.2.1",
+    "autoprefixer": "^6.3.3",
     "chokidar": "^1.0.5",
     "concat-transform": "^0.0.3",
     "glob": "^5.0.14",
